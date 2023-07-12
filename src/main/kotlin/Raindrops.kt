@@ -6,6 +6,6 @@ object Raindrops {
         I_TO_WORD.keys.forEach { i ->
             if (n.mod(i) == 0) append(I_TO_WORD[i])
         }
-        if (this.isBlank()) append(n.toString())
+        if (isBlank()) append(n.toString())
     }
 }
