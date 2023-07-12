@@ -2,16 +2,10 @@ private val I_TO_WORD = mapOf(3 to "Pling", 5 to "Plang", 7 to "Plong")
 
 object Raindrops {
 
-    fun convert(n: Int): String {
-        var result = I_TO_WORD.keys.fold("") { acc, k ->
-            if (n.mod(k) == 0) {
-                acc + I_TO_WORD[k]
-            } else {
-                acc
-            }
+    fun convert(n: Int): String = buildString {
+        I_TO_WORD.keys.forEach { i ->
+            if (n.mod(i) == 0) append(I_TO_WORD[i])
         }
-        if (result == "") result = n.toString()
-
-        return result
+        if (this.isBlank()) append(n.toString())
     }
 }
